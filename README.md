@@ -86,10 +86,15 @@ Per poder fer el hash haurem d'utilitzar un objecte de la classe _SHA512Managed_
 SHA512Managed SHA512 = new SHA512Managed();
 byte[] hashResult = SHA512.ComputeHash(bytesIn);
 ````
-Finalment, si volem que el hash es converteixi a un string de caràcters hexadecimals, usarem la funció _BitConverter_. Per defecte, separa cada byte convertit amb guions, per eliminar-los es fa servir el _Replace_.
+Si volem que el hash es converteixi a un string de caràcters hexadecimals, usarem la funció _BitConverter_. Per defecte, separa cada byte convertit amb guions, per eliminar-los es fa servir el _Replace_.
 
 ````C#
  String textOut = BitConverter.ToString(hashResult).Replace("-", string.Empty);
+````
+Finalment, una bona pràctica, els objectes que creem, en aquest cas SHA512, els eliminem de la memòria quan ja no són necessaris.
+
+````C#
+ SHA512.Dispose();
 ````
 
 
