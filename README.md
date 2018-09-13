@@ -65,7 +65,7 @@ namespace hash01
 }
 ````
 
-## Comentaris sobre el codi
+### Comentaris sobre el codi
 Es tracta d'un programa de consola que a partir d'un string introduït per teclat, mostra per pantalla el hash obtingut (algoritme SHA-512).
 
 En primer lloc els using permeten carregar els espais de noms (bàsicament el mateix que feu amb els import de Java). Haurem d'afegir les biblioteques de criptografia de .NET
@@ -91,6 +91,8 @@ Finalment, si volem que el hash es converteixi a un string de caràcters hexadec
 ````C#
  String textOut = BitConverter.ToString(hashResult).Replace("-", string.Empty);
 ````
+
+
 
 
 
