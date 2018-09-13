@@ -97,6 +97,19 @@ Finalment, una bona pràctica, els objectes que creem, en aquest cas SHA512, els
  SHA512.Dispose();
 ````
 
+## Activitat a realitzar
+En primer lloc cloneu-vos el repositori al vostre equip. Ho podeu fer utilitzant l'eina SourceTree, el propi Visual Studio o directament via comandes fent:
+
+````
+git clone https://github.com/carlesalonso/ExempleHash.git
+````
+
+Un cop tingueu el projecte clonat, l'obriu amb el Visual Studio i l'executeu. Comproveu el funcionament i mireu d'entendre el funcionament del codi.
+
+Ara que ja enteneu què fa el programa i com ho fa, caldrà que el modifiqueu per tal que enlloc de realitzar el hash d'un string entrat per teclat,  ho faci d'un fitxer de text. El primer pas, serà crear una nova branca que anomenareu v1. Serà en aquesta branca on realitzareu la modificació de l'arxiu. Penseu que estareu llegint arxius, per tant poden passar coses: l'arxiu no existeix, no es pot llegir, etc. per tant, cal que tingueu present utilitzar try/catch per capturar els errors.
+
+**Orientacions**
+Per llegir un fitxer caldrà que crideu a l'espai de noms System.IO. Tenim diverses maneres de llegir un fitxer de text, per fitxers de tipus text, el mètode més senzill és llegir-los directament i emmagatzemar el contingut a un string. Per això teniu el mètode File.ReadAllText.
 
 
 
