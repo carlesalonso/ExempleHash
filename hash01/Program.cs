@@ -19,8 +19,8 @@ namespace hash01
             // Convertim l'string a un array de bytes
             byte[] bytesIn = Encoding.UTF8.GetBytes(textIn);
             // Instanciar classe per fer hash
-            using (SHA512Managed SHA512 = new SHA512Managed())
-            {
+            SHA512Managed SHA512 = new SHA512Managed();
+            
                 // Calcular hash
                 byte[] hashResult = SHA512.ComputeHash(bytesIn);
 
@@ -31,8 +31,8 @@ namespace hash01
                 Console.WriteLine($"Hash del text {textIn}");
                 Console.WriteLine(textOut);
                 Console.ReadKey();
-
-            }
+            SHA512.Dispose();
+            
         }
     }
 }
