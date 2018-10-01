@@ -38,10 +38,13 @@ namespace hash01
     {
         static void Main(string[] args)
         {
-            String textIn = null;
-            Console.Write("Entra text: ");
-            while (textIn==null)
+            var textIn = "";
+            while (string.IsNullOrEmpty(textIn))
+            {
+                Console.Clear();
+                Console.Write("Entra text: "); 
                 textIn = Console.ReadLine();
+            }
 
             // Convertim l'string a un array de bytes
             byte[] bytesIn = Encoding.UTF8.GetBytes(textIn);
