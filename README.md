@@ -65,7 +65,7 @@ namespace hash01
 }
 ````
 
-## Comentaris sobre el codi
+### Comentaris sobre el codi
 Es tracta d'un programa de consola que a partir d'un string introduït per teclat, mostra per pantalla el hash obtingut (algoritme SHA-512).
 
 En primer lloc els using permeten carregar els espais de noms (bàsicament el mateix que feu amb els import de Java). Haurem d'afegir les biblioteques de criptografia de .NET
@@ -86,11 +86,38 @@ Per poder fer el hash haurem d'utilitzar un objecte de la classe _SHA512Managed_
 SHA512Managed SHA512 = new SHA512Managed();
 byte[] hashResult = SHA512.ComputeHash(bytesIn);
 ````
-Finalment, si volem que el hash es converteixi a un string de caràcters hexadecimals, usarem la funció _BitConverter_. Per defecte, separa cada byte convertit amb guions, per eliminar-los es fa servir el _Replace_.
+Si volem que el hash es converteixi a un string de caràcters hexadecimals, usarem la funció _BitConverter_. Per defecte, separa cada byte convertit amb guions, per eliminar-los es fa servir el _Replace_.
 
 ````C#
  String textOut = BitConverter.ToString(hashResult).Replace("-", string.Empty);
 ````
+Finalment, una bona pràctica, els objectes que creem, en aquest cas SHA512, els eliminem de la memòria quan ja no són necessaris.
+
+````C#
+ SHA512.Dispose();
+````
+
+## Activitat a realitzar
+En primer lloc cloneu-vos el repositori al vostre equip. Ho podeu fer utilitzant l'eina SourceTree, el propi Visual Studio o directament via comandes fent:
+
+````
+git clone https://github.com/carlesalonso/ExempleHash.git
+````
+
+Un cop tingueu el projecte clonat, l'obriu amb el Visual Studio i l'executeu. Comproveu el funcionament i mireu d'entendre el funcionament del codi.
+
+Ara que ja enteneu què fa el programa i com ho fa, caldrà que el modifiqueu per tal que enlloc de realitzar el hash d'un string entrat per teclat,  ho faci d'un fitxer de text. El primer pas, serà crear una nova branca que anomenareu v1. Serà en aquesta branca on realitzareu la modificació de l'arxiu. Penseu que estareu llegint arxius, per tant poden passar coses: l'arxiu no existeix, no es pot llegir, etc. per tant, cal que tingueu present utilitzar try/catch per capturar els errors.
+
+Per llegir un fitxer caldrà que crideu a l'espai de noms System.IO. Tenim diverses maneres de llegir un fitxer de text, per fitxers de tipus text, el mètode més senzill és llegir-los directament i emmagatzemar el contingut a un string. Per això teniu el mètode File.ReadAllText (investigueu com funciona).
+
+Un cop tingueu aquest apartat funcionant, crearem una branca v2, on anirem un pas més enllà. Guardarem el hash resultant en un arxiu que s'ha d'anomenar igual que l'arxiu original, però amb l'extensió .SHA. Com ja podeu intuir, disposem d'un mètode anomenat File.WriteAllText que ens permetrà guardar el hash en format string en un arxiu. De nou, cal que controleu els possibles errors.
+
+Com apartat final, crearem una branca final v3, on implementarem la darrera funcionalitat. A més de crear el hash d'un fitxer, ens ha de permetre comprovar la integritat d'un fitxer. Per fer aquesta funcionalitat, caldrà que calculeu el hash del fitxer i el compareu amb el hash emmagatzemat a l'arxiu. Com ara el programa té dues funcionalitats, caldrà fer un senzill menú o usar arguments per poder seleccionar una acció o l'altra.
+
+**Punt final**
+
+La darrera versió que tingeu funcional, la enviarem a la branca master, per fer això, no ho farem pas amb un merge, sinó amb un pull request que farem des de la pàgina de GitHub.
+
 
 
 
