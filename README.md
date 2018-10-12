@@ -104,7 +104,7 @@ Finalment, una bona pràctica, els objectes que creem, en aquest cas SHA512, els
 En primer lloc cloneu-vos el repositori al vostre equip. Ho podeu fer utilitzant l'eina SourceTree, el propi Visual Studio o directament via comandes fent:
 
 ````
-git clone https://github.com/carlesalonso/ExempleHash.git
+git clone URI del vostre repo creat
 ````
 
 Un cop tingueu el projecte clonat, l'obriu amb el Visual Studio i l'executeu. Comproveu el funcionament i mireu d'entendre el funcionament del codi.
