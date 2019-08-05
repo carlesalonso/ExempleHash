@@ -1,4 +1,4 @@
-# ExempleHasH
+# ExempleHasH!!
 MP09 UF1 NF1 A1 
 Exemple de funcionament del hash en C#
 
@@ -16,7 +16,7 @@ Els principals algoritmes de hash són:
 - SHA-384 com es pot deduir el resum serà de 384 bits, però el límit d'entrada s'amplia fins 2<sup>128</sup>-1 bits
 - SHA-512 el resum s'amplia fins fins el 512 bits respecte l'anterior.
 
-La mida del hash ens indica el conjunt finit de hashes possibles. Així amb 128 tindrem 2128 = 3,4·1038, així que suposant que puc comprovar 10 milions de missatges per segon, trigaria milions d’anys a provar-los tots. Ara és un conjunt finit, per tant hi ha una probabilitat d’obtenir el mateix hash per dos missatges diferents. De fet, el nombre d’intents és sensiblement inferior.
+La mida del hash ens indica el conjunt finit de hashes possibles. Així amb 128 tindrem 2<sup>128</sup> = 3,4·10<sup>38</sup>, així que suposant que puc comprovar 10 milions de missatges per segon, trigaria milions d’anys a provar-los tots. Ara és un conjunt finit, per tant hi ha una probabilitat d’obtenir el mateix hash per dos missatges diferents. De fet, el nombre d’intents és sensiblement inferior.
 
 Els algoritmes MD5 i SHA-1 es consideren obsolets perquè pateixen diverses vulnerabilitats de implementació, de manera que avui dia les implementacions utilitzades són les variants més modernes de SHA.
 
